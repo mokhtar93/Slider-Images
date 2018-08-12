@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/gallery.css">
+    <title>Gallery</title>
+</head>
+
+<body>
+    <!-- Slider Window  -->
+
+    <div class="wrap">
+        <div id="arrow-left" class="arrow" onclick="slideLeft();"></div>
+        <div id="slider">
+            <div class="slide slide1">
+                <div class="slide-content">
+                    <img data-src="1.jpg" alt="test image">
+
+                </div>
+            </div>
+            <div class="slide slide2">
+                <div class="slide-content">
+                    <img data-src="2.jpg" alt="test image">
+
+                </div>
+            </div>
+            <div class="slide slide3">
+                <div class="slide-content">
+                    <img data-src="3.jpg" alt="test image">
+
+                </div>
+            </div>
+        </div>
+        <div id="arrow-right" class="arrow" onclick="slideRight();"></div>
+    </div>
+
+    <div>
+        <button onclick="play('1');" id="startSlide">
+            <i class="far fa-play-circle fa-3x"></i>
+        </button>
+        <button onClick="play('0');" id="pauseSlide" style="visibility: hidden;">
+            <i class="fas fa-pause-circle fa-3x"></i>
+        </button>
+    </div>
+
+
+    <!-- Button trigger modal -->
+    <div>
+        <button id="config" class="btn btn-primary" onclick="pause();" data-toggle="modal" data-target="#exampleModalCenter">
+            <i class="fas fa-cog"></i>
+            Configure
+        </button>
+        <div id="default">
+            <label>Default Timer</label>
+            <input type="number" min="1" id="myInput" placeholder="enter time in seconds">
+            <button id="button-default" onclick="defaultTime();">
+                <i class="fas fa-sync-alt fa-la"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Sliders time</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <label>Slide time for image 1 </label>
+                        </div>
+                        <div class="col-md-7">
+                            <input id="input1" type="number" min="1" placeholder="time in seconds">
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <label>Slide time for image 2 </label>
+                        </div>
+                        <div class="col-md-7">
+                            <input id="input2" type="number" min="1" placeholder="time in seconds">
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <label>Slide time for image 3 </label>
+                        </div>
+                        <div class="col-md-7">
+                            <input id="input3" type="number" min="1" placeholder="time in seconds">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="saveTime();" data-dismiss="modal">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="/gallery.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+    crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+
+</html>
